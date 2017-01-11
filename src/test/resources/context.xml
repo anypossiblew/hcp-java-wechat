@@ -1,0 +1,15 @@
+<Context >
+  <Resource name="jdbc/DefaultDB"
+        global="jdbc/DefaultDB"
+        auth="Container"
+        type="javax.sql.DataSource"
+        driverClassName="com.sap.db.jdbc.Driver"
+        url="jdbc:sap://localhost:30015/"
+        username="SYSTEM"
+        password="1qaz@WSX"
+
+        maxActive="100"
+        maxIdle="20"
+        minIdle="5"
+        maxWait="10000"/>
+</Context>

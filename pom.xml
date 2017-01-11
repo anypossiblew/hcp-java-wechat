@@ -10,9 +10,10 @@
 
 	<properties>
 		<sap.cloud.sdk.version>2.65.5</sap.cloud.sdk.version>
-		<!-- Property that holds the supported JDK version for the given SAP HANA
+		<!-- Property that holds the supported JDK version for the given SAP HANA 
 			Cloud Platform SDK -->
 		<sap.cloud.jdk.version>1.7</sap.cloud.jdk.version>
+		<sap.cloud.sdk.path>${project.basedir}/../../programs/neo-java-web-sdk-2.65.5</sap.cloud.sdk.path>
 	</properties>
 
 	<dependencies>
@@ -23,7 +24,8 @@
 			<version>${sap.cloud.sdk.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- Required for compilation and required at runtime (additional web application libraries) -->
+		<!-- Required for compilation and required at runtime (additional web application 
+			libraries) -->
 		<dependency>
 			<groupId>com.sap.security.core.server</groupId>
 			<artifactId>csi</artifactId>
@@ -47,6 +49,13 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.sap.db.jdbc</groupId>
+			<artifactId>ngdbc</artifactId>
+			<version>1.96.0</version>
+			<scope>system</scope>
+			<systemPath>${sap.cloud.sdk.path}/repository/.archive/lib/ngdbc.jar</systemPath>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -59,7 +68,8 @@
 				</configuration>
 			</plugin>
 
-			<!-- Set compiler to officially supported JDK version for the given SAP	HANA Cloud Platform SDK -->
+			<!-- Set compiler to officially supported JDK version for the given SAP 
+				HANA Cloud Platform SDK -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
@@ -75,6 +85,9 @@
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.0</version>
+				<configuration>
+					<contextFile>${project.basedir}/src/test/resources/context.xml</contextFile>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
