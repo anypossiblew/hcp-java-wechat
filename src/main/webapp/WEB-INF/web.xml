@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>MessageServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/message</url-pattern>
     </servlet-mapping>
 
     <!-- Declare the JNDI lookup of the default data source -->
