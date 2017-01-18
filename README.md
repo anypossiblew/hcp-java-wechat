@@ -14,3 +14,8 @@ HCP Java project for wechat integration
 ### run locally
 
 `mvn tomcat7:run`
+
+### download source or javadoc
+
+`mvn dependency:sources`
+`mvn dependency:resolve -Dclassifier=javadoc`

@@ -3,9 +3,10 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
     <persistence-unit name="persistence-with-jpa" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>com.sap.c4c.wechat.model.Customer</class>
+        <non-jta-data-source>java:comp/env/jdbc/DefaultDB</non-jta-data-source>
+        <class>com.sap.c4c.wechat.model.Message</class>
         <properties>
-            <property name="eclipselink.ddl-generation" value="create-tables" />
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
             <property name="eclipselink.logging.level" value="SEVERE" />
         </properties>
     </persistence-unit>
